@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
-import { CreateCategories1658692157819 } from "./migrations/1658692157819-CreateCategories"
-import { CreateVideos1658692903506 } from "./migrations/1658692903506-CreateVideos"
+import { CategoryEntity, VideoEntity } from "../entities/index.entities"
+import { CreateCategories, CreateVideos } from "./migrations/index.migration"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -9,7 +9,8 @@ export const AppDataSource = new DataSource({
     username: "postgres",
     password: "docker",
     database: "postgres",
-    migrations: [CreateCategories1658692157819, CreateVideos1658692903506]
+    migrations: [CreateVideos, CreateCategories],
+    entities: [VideoEntity,CategoryEntity]
 })
 
 AppDataSource.initialize()
