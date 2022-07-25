@@ -3,11 +3,11 @@ type CategoryRequest = {
     description: string
 }
 type CategoryUpdateRequest = {
-    id:string,
+    id: string,
     name: string,
     description: string
 }
-type VideoRequest={
+type VideoRequest = {
     name: string,
     description: string,
     duration: number,
